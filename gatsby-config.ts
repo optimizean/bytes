@@ -69,6 +69,15 @@ const config: GatsbyConfig = {
 		  publisherId: `ca-pub-3205853116674102`
 	  }
 	},
+	{
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+      	host:'https://optimizean.github.io/bytes/',
+          sitemap: 'https://optimizean.github.io/bytes/sitemap-index.xml',
+          policy:[{ userAgent: '*', allow: '/'}],
+    	
+	  }
+	},
     {
       resolve: `gatsby-plugin-sitemap`,
       options: {
