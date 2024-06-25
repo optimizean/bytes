@@ -20,7 +20,59 @@ const config: GatsbyConfig = {
   },
   trailingSlash: `always`,
   plugins: [
-    {
+
+	// --- Optional Plugin ---//
+	// rendering
+	`gatsby-plugin-image`,	// srcset, placeholder, blur before loading
+	`gatsby-plugin-sharp`,	// practical image handling (e.g. compress)
+	`gatsby-plugin-offline`,// setup a site to be able to run offline
+	// SEO
+	{
+    resolve: `gatsby-plugin-canonical-urls`,
+    options: {
+      siteUrl: `https://optimizean.github.io/bytes/`,
+      },
+  	},
+	// pages
+	`gatsby-remark-autolink-headers`,
+	
+	// google stuff
+	{
+	  resolve: `gatsby-plugin-google-gtag`,
+	  options: {
+		  trackingIds: [`G-M8Y6T6MR7F`],
+	  }
+	},
+	{
+	  resolve: `gatsby-plugin-google-adsense`,
+	  options:{
+		  publisherId: `ca-pub-3205853116674102`
+	  }
+	},
+	{
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+      	host:'https://optimizean.github.io/bytes/',
+          sitemap: 'https://optimizean.github.io/bytes/sitemap-index.xml',
+          policy:[{ userAgent: '*', allow: '/'}],
+    	
+	  }
+	},
+	{
+      resolve: 'gatsby-plugin-react-helmet',
+      options: {
+        meta: [
+          { name: 'google-site-verification', content: 'qM97oJuX0VG4W5EXVzIVND8aLap6gpkx7uExvqR91Ys' },
+        ],
+      },
+    },
+
+
+    // -- Optional Plugin End --//
+
+
+	// Theme related
+	{
       resolve: `@lekoarts/gatsby-theme-minimal-blog`,
       // See the theme's README for all available options
       options: {
@@ -56,28 +108,7 @@ const config: GatsbyConfig = {
           },
         ],
       },
-    },
-	{
-	  resolve: `gatsby-plugin-google-gtag`,
-	  options: {
-		  trackingIds: [`G-M8Y6T6MR7F`],
-	  }
-	},
-	{
-	  resolve: `gatsby-plugin-google-adsense`,
-	  options:{
-		  publisherId: `ca-pub-3205853116674102`
-	  }
-	},
-	{
-      resolve: 'gatsby-plugin-robots-txt',
-      options: {
-      	host:'https://optimizean.github.io/bytes/',
-          sitemap: 'https://optimizean.github.io/bytes/sitemap-index.xml',
-          policy:[{ userAgent: '*', allow: '/'}],
-    	
-	  }
-	},
+    },	
     {
       resolve: `gatsby-plugin-sitemap`,
       options: {
