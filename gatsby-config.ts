@@ -57,6 +57,18 @@ const config: GatsbyConfig = {
         ],
       },
     },
+	{
+	  resolve: `gatsby-plugin-google-gtag`,
+	  options: {
+		  trackingIds: [`G-M8Y6T6MR7F`],
+	  }
+	},
+	{
+	  resolve: `gatsby-plugin-google-adsense`,
+	  options:{
+		  publisherId: `ca-pub-3205853116674102`
+	  }
+	},
     {
       resolve: `gatsby-plugin-sitemap`,
       options: {
