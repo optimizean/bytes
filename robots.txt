@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://optimizean.github.io/bytes/sitemap-index.xml
-Host: https://optimizean.github.io
+Sitemap: https://seunyul.github.io/bytes/sitemap-index.xml
+Host: https://seunyul.github.io
